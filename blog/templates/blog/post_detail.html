@@ -10,4 +10,7 @@
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaks }}</p>
     </div>
+    <div style="text-align: center; margin-top: 50px">
+      <a href="{% url 'post_list' %}">トップページに戻る</a>
+    </div>
 {% endblock %}

@@ -2,12 +2,14 @@
 
 {% block content %}
   {% for post in posts %}
-    <div class="post">
-        <div class="date">
-            {{ post.published_date }}
-        </div>
-        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaks }}</p>
-    </div>
+    <div>
+      <h3>{{ post.title }}</h3>
+      <h6>{{ post.published_date }}</h6>
+      <div>{{ post.text | linebreaks | truncatechars:100 }}</div>
+      <div class="detail_link">
+      <a href="{% url 'post_detail' pk=post.pk %}">記事を読む</a>
+      </div>
+      <hr />
+  </div>
   {% endfor %}
 {% endblock content %}
