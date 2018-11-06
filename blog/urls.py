@@ -5,6 +5,8 @@ from django.contrib import admin
 from django.urls import include, path
 
 
+admin.site.site_header = 'Neo-momopi-blog管理コンソール' 
+
 urlpatterns = [
     path('', views.post_list, name='post_list'),
     path('post/<int:pk>', views.post_detail, name='post_detail'),

@@ -5,7 +5,11 @@
     <div>
       <h6>{{ post.published_date }}</h6>
       <h2>{{ post.title }}</h2>
-      <div>{{ post.text | linebreaks | truncatechars:100 }}</div>
+      {% ifequal post.text_type 'HTML' %}
+        <p>{{ post.text | safe | truncatechars:100  }}</p>
+      {% else %}
+        <p>{{ post.text|linebreaksbr  | truncatechars:100  }}</p>
+      {% endifequal %}
       <div class="detail_link">
       <a href="{% url 'post_detail' pk=post.pk %}">記事を読む</a>
       </div>

@@ -6,7 +6,13 @@
           <h5>{{ post.published_date }}</h5>
         {% endif %}
         <h1>{{ post.title }}</h1>
-        <p>{{ post.text|safe }}</p>
+
+        {% ifequal post.text_type 'HTML' %}
+          <p>{{ post.text|safe }}</p>
+        {% else %}
+          <p>{{ post.text|linebreaksbr }}</p>
+        {% endifequal %}
+
     </div>
     <div style="text-align: center; margin-top: 50px">
       <a href="{% url 'post_list' %}">トップページに戻る</a>
