@@ -5,11 +5,14 @@
     <div>
       <h6>{{ post.published_date }}</h6>
       <h2>{{ post.title }}</h2>
-      {% ifequal post.text_type 'HTML' %}
-        <p>{{ post.text | safe | truncatechars:100  }}</p>
+      {% if post.text_type == 'HTML' %}
+        <p>{{ post.text|safe }}</p>
+      {% elif post.text_type == 'Markdown' %}
+        {% load markdown_filter %}
+        <p>{{ post.text|markdown_filter|safe }}</p>
       {% else %}
-        <p>{{ post.text|linebreaksbr  | truncatechars:100  }}</p>
-      {% endifequal %}
+        <p>{{ post.text|linebreaksbr }}</p>
+      {% endif %}
       <div class="detail_link">
       <a href="{% url 'post_detail' pk=post.pk %}">記事を読む</a>
       </div>

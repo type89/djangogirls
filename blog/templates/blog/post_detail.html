@@ -7,11 +7,14 @@
         {% endif %}
         <h1>{{ post.title }}</h1>
 
-        {% ifequal post.text_type 'HTML' %}
+        {% if post.text_type == 'HTML' %}
           <p>{{ post.text|safe }}</p>
+        {% elif post.text_type == 'Markdown' %}
+          {% load markdown_filter %}
+          <p>{{ post.text|markdown_filter|safe }}</p>
         {% else %}
           <p>{{ post.text|linebreaksbr }}</p>
-        {% endifequal %}
+        {% endif %}
 
     </div>
     <div style="text-align: center; margin-top: 50px">
