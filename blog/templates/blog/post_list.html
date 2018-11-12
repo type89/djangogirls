@@ -3,8 +3,8 @@
 {% block content %}
   {% for post in posts %}
     <div>
-      <h6>{{ post.published_date }}</h6>
       <h2>{{ post.title }}</h2>
+      <h6>{{ post.published_date }}</h6>
       {% if post.text_type == 'HTML' %}
         <p>{{ post.text|safe }}</p>
       {% elif post.text_type == 'Markdown' %}

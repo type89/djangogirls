@@ -2,10 +2,11 @@
 
 {% block content %}
     <div class="post">
+        <h2>{{ post.title }}</h2>
         {% if post.published_date %}
           <h5>{{ post.published_date }}</h5>
         {% endif %}
-        <h1>{{ post.title }}</h1>
+
 
         {% if post.text_type == 'HTML' %}
           <p>{{ post.text|safe }}</p>
@@ -17,7 +18,7 @@
         {% endif %}
 
     </div>
-    <div style="text-align: center; margin-top: 50px">
+    <div style="text-align: center">
       <a href="{% url 'post_list' %}">トップページに戻る</a>
     </div>
 {% endblock %}

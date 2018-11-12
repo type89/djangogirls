@@ -4,15 +4,20 @@ body {
 
 .blog_title{
   text-align: center;
-  width: 70%;
+  width: 90%;
   margin: 0px auto;
 }
 
 .post-list{
-  width: 70%;
+  width: 90%;
   margin: 0px auto;
   }
 
 .detail_link{
    text-align: right;
+}
+
+h2 {
+     padding-bottom: 0.3em;
+     border-bottom: solid 2px black;
 }
