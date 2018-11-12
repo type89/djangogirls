@@ -18,6 +18,20 @@ body {
 }
 
 h2 {
-     padding-bottom: 0.3em;
-     border-bottom: solid 2px black;
+     position: relative;
+     color: white;
+     padding:0.5em 0.5em 0.5em 1.4em;
+     background-color: #446689;
+     border-radius: 5px;
+}
+
+h2::after {
+     position: absolute;
+     top: 50%;
+     left:0.7em;
+     transform:translateY(-50%);
+     content: '';
+     width: 5px;
+     height:25px;
+     background-color:white;
 }
