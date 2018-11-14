@@ -8,7 +8,7 @@ html {
  * ウィンドウ幅 860px から 1280px まで、
  * フォントサイズが 16px から 24px に流動的に変化する
  */
-@media (min-width: 860px) {
+@media (min-width: 576px) {
   html {
     font-size: calc(1rem + ((1vw - 8.6px) * 1.9048));
   }
@@ -17,6 +17,6 @@ html {
 /* 最大フォントサイズ : 幅 1280px 以上は 24px */
 @media (min-width: 1280px) {
   html {
-    font-size: 24px;
+    font-size: 18px;
   }
 }
