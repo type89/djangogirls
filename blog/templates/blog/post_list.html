@@ -11,9 +11,9 @@
         <p class="card-text">{{ post.text|safe }}</p>
       {% elif post.text_type == 'Markdown' %}
         {% load markdown_filter %}
-        <p class="card-text">{{ post.text|markdown_filter|safe }}</p>
+        <p class="card-text">{{ post.text|markdown_filter|safe|truncatechars:30 }}</p>
       {% else %}
-        <p class="card-text">{{ post.text|linebreaksbr }}</p>
+        <p class="card-text">{{ post.text|linebreaksbr|truncatechars:30 }}</p>
       {% endif %}
       <div align="right"><a href="{% url 'post_detail' pk=post.pk %}">記事を読む　　　</a></div>
     </div>

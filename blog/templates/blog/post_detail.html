@@ -1,24 +1,22 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div class="post">
-        <h2>{{ post.title }}</h2>
-        {% if post.published_date %}
-          <h5>{{ post.published_date }}</h5>
-        {% endif %}
+<div class="card">
+<h5 class="card-header">{{ post.title }}</h5>
 
+<div class="card-body>">
 
-        {% if post.text_type == 'HTML' %}
-          <p>{{ post.text|safe }}</p>
-        {% elif post.text_type == 'Markdown' %}
-          {% load markdown_filter %}
-          <p>{{ post.text|markdown_filter|safe }}</p>
-        {% else %}
-          <p>{{ post.text|linebreaksbr }}</p>
-        {% endif %}
-
-    </div>
-    <div style="text-align: center">
-      <a href="{% url 'post_list' %}">トップページに戻る</a>
-    </div>
+  {% if post.text_type == 'HTML' %}
+    <p class="card-text">{{ post.text|safe }}</p>
+  {% elif post.text_type == 'Markdown' %}
+    {% load markdown_filter %}
+    <p class="card-text">{{ post.text|markdown_filter|safe }}</p>
+  {% else %}
+    <p class="card-text">{{ post.text|linebreaksbr }}</p>
+  {% endif %}
+  <div align="right"><a href="{% url 'post_list' %}">トップページに戻る　　</a></div>
+</div>
+    <div align="right"><h6 class="card-footer">{{ post.published_date }}</h6></div>
+  </div>
+  <p>
 {% endblock %}
