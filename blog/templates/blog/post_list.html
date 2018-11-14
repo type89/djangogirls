@@ -2,20 +2,23 @@
 
 {% block content %}
   {% for post in posts %}
-    <div>
-      <h2>{{ post.title }}</h2>
-      <h6>{{ post.published_date }}</h6>
+    <div class="card">
+    <h5 class="card-header">{{ post.title }}</h5>
+
+    <div class="card-body>">
+
       {% if post.text_type == 'HTML' %}
-        <p>{{ post.text|safe }}</p>
+        <p class="card-text">{{ post.text|safe }}</p>
       {% elif post.text_type == 'Markdown' %}
         {% load markdown_filter %}
-        <p>{{ post.text|markdown_filter|safe }}</p>
+        <p class="card-text">{{ post.text|markdown_filter|safe }}</p>
       {% else %}
-        <p>{{ post.text|linebreaksbr }}</p>
+        <p class="card-text">{{ post.text|linebreaksbr }}</p>
       {% endif %}
-      <div class="detail_link">
-      <a href="{% url 'post_detail' pk=post.pk %}">記事を読む</a>
+      <div align="right"><a href="{% url 'post_detail' pk=post.pk %}">記事を読む　　　</a></div>
+    </div>
+        <div align="right"><h6 class="card-footer">{{ post.published_date }}</h6></div>
       </div>
-  </div>
+      <p>
   {% endfor %}
 {% endblock content %}

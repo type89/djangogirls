@@ -1,16 +1,6 @@
-/* 最小フォントサイズ : 16px */
-html {
-  font-size: 16px;
-}
-
-body {
-	background-color: white;
-}
 
 .blog_title{
    text-align: center;
-   padding : 10px;
-   margin : 5px;
 }
 
 .post-list{
@@ -18,20 +8,4 @@ body {
 
 .detail_link{
    text-align: right;
-}
-
-h2 {
-     position: relative;
-     padding:0 0 0.5em 0.7em;
-     border-bottom: 1px solid black;
-}
-
-h2::after {
-     position: absolute;
-     top: 0.2em;
-     left:0;
-     content: '';
-     width: 5px;
-     height:1em;
-     background-color: #446689;
 }
