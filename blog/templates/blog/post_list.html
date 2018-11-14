@@ -6,7 +6,6 @@
     <h5 class="card-header">{{ post.title }}</h5>
 
     <div class="card-body>">
-
       {% if post.text_type == 'HTML' %}
         <p class="card-text">{{ post.text|safe }}</p>
       {% elif post.text_type == 'Markdown' %}
@@ -15,10 +14,12 @@
       {% else %}
         <p class="card-text">{{ post.text|linebreaksbr|truncatechars:30 }}</p>
       {% endif %}
-      <div align="right"><a href="{% url 'post_detail' pk=post.pk %}">記事を読む　　　</a></div>
+      <div align="right"><a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">記事を読む</a></div>
     </div>
-        <div align="right"><h6 class="card-footer">{{ post.published_date }}</h6></div>
-      </div>
-      <p>
+    
+    <div align="right"><h6 class="card-footer">{{ post.published_date }}</h6></div>
+    </div>
+    <p>
   {% endfor %}
+
 {% endblock content %}

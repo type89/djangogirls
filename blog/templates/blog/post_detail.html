@@ -14,7 +14,7 @@
   {% else %}
     <p class="card-text">{{ post.text|linebreaksbr }}</p>
   {% endif %}
-  <div align="right"><a href="{% url 'post_list' %}">トップページに戻る　　</a></div>
+  <div align="right"><a href="{% url 'post_list' %}" class="btn btn-primary">トップページに戻る</a></div>
 </div>
     <div align="right"><h6 class="card-footer">{{ post.published_date }}</h6></div>
   </div>
