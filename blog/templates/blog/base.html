@@ -6,13 +6,18 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
 <body>
-  <div class="container">
-    <div class="jumbotron">
-      <h1 class="mb-2"><b>Neo-Momopi Blog</b></h1>
-      <p>いろいろな開発に挑戦してみるブログです</p>
+
+    <div class="row no-gutters">
+    <div class=col-md-3 d-none d-md-block></div>
+    <div class=col-md-6>
+      <div class="jumbotron">
+        <h1 class="mb-2"><b>Neo-Momopi Blog</b></h1>
+        <p>いろいろな開発に挑戦してみるブログです</p>
+      </div>
+          {% block content %}
+          {% endblock %}
     </div>
-            {% block content %}
-            {% endblock %}
-  </div>
+    <div class=col-md-3 d-none d-md-block></div>
+
 </body>
 </html>
