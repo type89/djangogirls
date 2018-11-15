@@ -3,20 +3,20 @@
 {% block content %}
   {% for post in posts %}
     <div class="card">
-    <h5 class="card-header">{{ post.title }}</h5>
+    <h5 class="card-header"><b>{{ post.title }}</b></h5>
 
     <div class="card-body>">
       {% if post.text_type == 'HTML' %}
-        <p class="card-text">{{ post.text|safe }}</p>
+        <p class="card-text p-3">{{ post.text|safe }}</p>
       {% elif post.text_type == 'Markdown' %}
         {% load markdown_filter %}
-        <p class="card-text">{{ post.text|markdown_filter|safe|truncatechars:30 }}</p>
+        <p class="card-text p-3">{{ post.text|markdown_filter|safe|truncatechars:30 }}</p>
       {% else %}
-        <p class="card-text">{{ post.text|linebreaksbr|truncatechars:30 }}</p>
+        <p class="card-text p-3">{{ post.text|linebreaksbr|truncatechars:30 }}</p>
       {% endif %}
-      <div align="right"><a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">記事を読む</a></div>
+      <div align="right"><a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary m-3">記事を読む</a></div>
     </div>
-    
+
     <div align="right"><h6 class="card-footer">{{ post.published_date }}</h6></div>
     </div>
     <p>
