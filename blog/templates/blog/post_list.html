@@ -2,6 +2,7 @@
 
 {% block content %}
   {% for post in posts %}
+
     <div class="card">
     <h5 class="card-header"><b>{{ post.title }}</b></h5>
 
@@ -20,6 +21,7 @@
     <div align="right"><h6 class="card-footer">{{ post.published_date }}</h6></div>
     </div>
     <p>
+      
   {% endfor %}
 
 {% endblock content %}
