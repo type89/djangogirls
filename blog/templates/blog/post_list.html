@@ -18,10 +18,10 @@
       <div align="right"><a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary m-3">記事を読む</a></div>
     </div>
 
-    <div align="right"><h6 class="card-footer">{{ post.published_date }}</h6></div>
+    <div align="right"><h6 class="card-footer mb-0">{{ post.published_date }}</h6></div>
     </div>
     <p>
-      
+
   {% endfor %}
 
 {% endblock content %}
